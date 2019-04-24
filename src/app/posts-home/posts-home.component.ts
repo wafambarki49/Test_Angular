@@ -8,14 +8,14 @@ import { PostsService } from '../services/posts.service';
 })
 export class PostsHomeComponent implements OnInit {
 
-  posts = [];
+  posts:Array<any> = [];
 
   constructor(private postService: PostsService) { }
 
   ngOnInit() {
     this.postService.getPosts().subscribe( 
       (response) => {
-        this.posts = {...response};
+      this.posts = response;
       },
     (error) => {
       console.log(error);

@@ -1,3 +1,16 @@
-<p>
-  posts-home works!
-</p>
+<mz-collection>
+    <mz-card *ngFor="let post of posts"
+  class="card blue-grey darken-1">
+  <mz-card-title>
+    {{post.title}}
+  </mz-card-title>
+  <mz-card-content>
+    {{post.body}}
+  </mz-card-content>
+  <mz-card-action>
+    <a [routerLink]= "[post.id]">See More</a>
+  </mz-card-action>
+</mz-card>
+</mz-collection >
+
+
