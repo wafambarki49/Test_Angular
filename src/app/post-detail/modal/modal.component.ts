@@ -43,6 +43,10 @@ export class ModalComponent implements OnInit {
     ready: (modal, trigger) => {
       console.log(modal, trigger);
     },
-    complete: () => { console.log("closed") } 
+    complete: () => { 
+      this.name = '';
+      this.email = '';
+      this.body = '';
+     } 
   };
 }
