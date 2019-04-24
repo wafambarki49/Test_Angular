@@ -1,0 +1,28 @@
+<mz-modal #modal [fixedFooter]="true" [bottomSheet]="true" [options]="modalOptions">
+    <mz-modal-header>
+      <h4>Add</h4>
+    </mz-modal-header>
+    <mz-modal-content>
+        <mz-input-container>
+            <input mz-input
+              placeholder="Enter your email"
+              type="email"
+              [(ngModel)]="email">
+
+            <input mz-input
+              placeholder="Enter your name"
+              [(ngModel)]="name">
+
+            <input mz-input
+              placeholder="Enter your comment"
+              length="500"
+              [(ngModel)]="body">
+              
+          </mz-input-container>
+          
+    </mz-modal-content>
+    <mz-modal-footer>
+      <button mz-button [flat]="true" mz-modal-close (click)="onAddClicked()">Add</button>
+      <button mz-button [flat]="true" mz-modal-close>Cancel</button>
+    </mz-modal-footer>
+  </mz-modal>

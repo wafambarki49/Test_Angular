@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { MzCollectionModule, MzCardModule, MzIconModule, MzIconMdiModule, MzModalModule, MzButtonModule,MzInputModule } from 'ngx-materialize';
 import { CommentsComponent } from './post-detail/comments/comments.component';
 import { FormsModule } from '@angular/forms';
+import { ModalComponent } from './post-detail/modal/modal.component';
 
 
 
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     PostsHomeComponent,
     PostDetailComponent,
     NotFoundPageComponent,
-    CommentsComponent
+    CommentsComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
