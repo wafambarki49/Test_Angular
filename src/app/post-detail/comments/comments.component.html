@@ -1,0 +1,9 @@
+<mz-collection>
+  <mz-collection-item [avatar]="true" *ngFor="let com of comments">
+    <i mz-avatar mz-icon-mdi [icon]="'comment'" class="blue lighten-1"></i>
+    <div class="title"><h5>name:</h5>{{ com.name }}</div>
+    <div><h5>email:</h5>{{com.email}}</div>
+    <div><h5>comment:</h5> {{ com.body }}</div>
+    <a mz-secondary-content href="#!"></a>
+  </mz-collection-item>
+</mz-collection>

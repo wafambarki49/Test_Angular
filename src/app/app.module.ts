@@ -7,7 +7,12 @@ import { PostsHomeComponent } from './posts-home/posts-home.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import { MzCollectionModule,MzCardModule } from 'ngx-materialize'
+import { MzCollectionModule, MzCardModule, MzIconModule, MzIconMdiModule, MzModalModule, MzButtonModule,MzInputModule } from 'ngx-materialize';
+import { CommentsComponent } from './post-detail/comments/comments.component';
+import { FormsModule } from '@angular/forms';
+
+
+
 
 
 @NgModule({
@@ -15,14 +20,21 @@ import { MzCollectionModule,MzCardModule } from 'ngx-materialize'
     AppComponent,
     PostsHomeComponent,
     PostDetailComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpModule,
     MzCollectionModule,
-    MzCardModule
+    MzCardModule,
+    MzIconModule,
+    MzIconMdiModule,
+    MzModalModule,
+    MzButtonModule,
+    MzInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
