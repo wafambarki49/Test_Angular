@@ -7,6 +7,8 @@ import { PostsHomeComponent } from './posts-home/posts-home.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { MzCollectionModule,MzCardModule } from 'ngx-materialize'
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    MzCollectionModule,
+    MzCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
