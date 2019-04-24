@@ -12,8 +12,8 @@
       Body: {{postDetail.body}}
     </mz-card-content>
     <mz-card-action>
-      <a (click)="showComments()">Show Comments</a>
-      <a (click)="openModal()">add Comment</a>
+      <a [ngStyle] = "{'cursor': 'pointer'}" (click)="showComments()">Show Comments</a>
+      <a [ngStyle] = "{'cursor': 'pointer'}" (click)="openModal()">add Comment</a>
     </mz-card-action>
   </mz-card>
   <div [ngStyle]="{'margin-right': '25%', 'margin-left': '25%','margin-top': '25px'}" *ngIf="isShowComments">
