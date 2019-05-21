@@ -1,3 +1,4 @@
+<div *ngIf="!error">
 <mz-collection>
   <mz-collection-item [avatar]="true" *ngFor="let com of comments">
     <i mz-avatar mz-icon-mdi [icon]="'comment'" class="blue lighten-1"></i>
@@ -7,3 +8,7 @@
     <a mz-secondary-content href="#!"></a>
   </mz-collection-item>
 </mz-collection>
+</div>
+<div *ngIf="error">
+  <h3>Opps ! Something Went Wrong when fetching Comments</h3>
+</div>

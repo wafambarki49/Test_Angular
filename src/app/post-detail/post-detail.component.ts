@@ -19,27 +19,34 @@ export class PostDetailComponent implements OnInit {
     title: '',
     body: ''
   };
+  errorPostDetail: boolean = false;
+  loading: boolean = true;
   postComments: Array<any> = [];
+  errorComments: boolean = false;
 
   constructor(private postsService: PostsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-
     this.id = this.route.snapshot.params['id'];
-    
-    forkJoin( 
-      this.postsService.getPostDetail(this.id),
-      this.postsService.getComments(this.id)
-    ).subscribe( 
-      ([post,comments]) => {
-        this.postDetail = post;
-        this.postComments = comments;
+
+    this.postsService.getPostDetail(this.id).subscribe( 
+      (response) => {
+      this.postDetail = response;
+      this.loading = false;
       },
-      ([err1,err2]) => {
-        console.log(err1);
-        console.log(err2);
+    (error) => {
+      error && (this.errorPostDetail = true);
+      this.loading = false;
+    });
+
+    this.postsService.getComments(this.id).subscribe(
+      (response) => {
+        this.postComments = response;
+        },
+      (error) => {
+        error && (this.errorComments = true)
       }
-      );
+    )
   } 
 
   openModal() {
