@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
-import { Observable,of } from 'rxjs';
+import { Observable,of, throwError } from 'rxjs';
 import { map,filter,catchError } from 'rxjs/operators';
 
 
@@ -13,14 +13,13 @@ export class PostsService {
   COMMENTS_API_URL = 'https://jsonplaceholder.typicode.com/comments';
   constructor(private http: Http) { }
 
-  getPosts() {
+  getPosts(): Observable<any> {
     return this.http.get(this.POSTS_API_URL).pipe(
 
       map((response: Response) => {
         return response.json();
       }),
-      
-      catchError( error => of(`Something Went Wrong:${error}`) )
+      catchError( error => throwError(error))
     );
   }
 
@@ -29,7 +28,7 @@ export class PostsService {
       map( (response: Response) => {
         return response.json();
       }),
-      catchError( error => of(`Something Went Wrong:${error}`))
+      catchError( error => throwError(error))
     )
   }
 
@@ -38,7 +37,7 @@ export class PostsService {
       map( (response: Response) => {
         return response.json();
       }),
-      catchError( error => of(`Something Went Wrong:${error}`))
+      catchError( error => throwError(error))
     )
   }
 
@@ -48,7 +47,7 @@ export class PostsService {
            return response.json();
          }
       ),
-      catchError( error => of(`Something Went Wrong:${error}`))
+      catchError( error => throwError(error))
     )
   }
 }

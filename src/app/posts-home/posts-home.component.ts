@@ -9,7 +9,7 @@ import { PostsService } from '../services/posts.service';
 export class PostsHomeComponent implements OnInit {
 
   posts:Array<any> = [];
-
+  errorPosts:boolean = false;
   constructor(private postService: PostsService) { }
 
   ngOnInit() {
@@ -18,7 +18,7 @@ export class PostsHomeComponent implements OnInit {
       this.posts = response;
       },
     (error) => {
-      console.log(error);
+      error && (this.errorPosts = true);
     })
   }
 

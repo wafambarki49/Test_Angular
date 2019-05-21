@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class CommentsComponent implements OnInit {
 
   @Input('comments') comments:Array<any>;
-
+  @Input('ErrorComments') error: boolean;
 
   constructor() { }
 
