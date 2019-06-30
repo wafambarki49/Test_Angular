@@ -15,7 +15,7 @@ export class PostsHomeComponent implements OnInit {
   ngOnInit() {
     this.postService.getPosts().subscribe( 
       (response) => {
-      this.posts = response;
+      this.posts = response.slice(0,2);
       },
     (error) => {
       error && (this.errorPosts = true);

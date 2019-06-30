@@ -11,6 +11,7 @@ import { MzCollectionModule, MzCardModule, MzIconModule, MzIconMdiModule, MzModa
 import { CommentsComponent } from './post-detail/comments/comments.component';
 import { FormsModule } from '@angular/forms';
 import { ModalComponent } from './post-detail/modal/modal.component';
+import { CDDirective } from './commentDynamic.directive';
 
 
 
@@ -23,7 +24,8 @@ import { ModalComponent } from './post-detail/modal/modal.component';
     PostDetailComponent,
     NotFoundPageComponent,
     CommentsComponent,
-    ModalComponent
+    ModalComponent,
+    CDDirective
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import { ModalComponent } from './post-detail/modal/modal.component';
     FormsModule
   ],
   providers: [],
+  entryComponents: [ CommentsComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
